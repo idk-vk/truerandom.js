@@ -4,7 +4,7 @@
   "description": "A module to provide truly random numbers in node.js(quantum randomness).",
   "main": "locale.js",
   "scripts": {
-    "test": "locale.js"
+    "test": "node locale.js"
   },
   "repository": {
     "type": "git",
