@@ -1,6 +1,6 @@
 # TrueRandom.js
 
-[![NPM](https://nodei.co/npm/truerandom.png)](https://npmjs.org/package/truerandom)
+[![NPM](https://nodei.co/npm/truerandom.js.png)](https://npmjs.org/package/truerandom.js)
 
 
 TrueRandom.js is an utility node js library which provides truly random numbers using quantum randomness.
