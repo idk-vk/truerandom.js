@@ -51,17 +51,28 @@ exports.generate = function (type,length,size) {
   };
 
 
-// range addition 
-exports.digits = function(digits){
-	if(digits  > 5){
-	 let number = 1;
-	}
-	else{
-	 let number = digits/5;
+// Function to execut main code
 
-	}
+
+//   truerandom.generate('uint16',2)
+//   .then(response => {
+
+// console.log(response);
+
+//   })
+//   .catch(error => {
+//     // handle error here
+//   });
+
+
+
+
+
+// let tr = {};
+exports.digits = function(digits,size){
+	 let number = digits/5;
   return new Promise((resolve, reject) => {
-  truerandom.generate('uint16',number)
+  exports.generate('uint16',number,size)
   .then(response => {
 let newarray = response.join('').split('');
 newarray.length = digits;
@@ -73,3 +84,15 @@ newarray.length = digits;
   });});
 };
 
+
+
+
+// exports.digits(10)
+//   .then(response => {
+
+// console.log(response);
+
+//   })
+//   .catch(error => {
+//     // handle error here
+//   });
