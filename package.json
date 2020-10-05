@@ -1,0 +1,25 @@
+{
+  "name": "truerandom.js",
+  "version": "1.0.0",
+  "description": "A module to provide truly random numbers in node.js(quantum randomness).",
+  "main": "locale.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idk-vk/truerandom.js.git"
+  },
+  "keywords": [
+    "random",
+    "quantum",
+    "truerandom.js",
+    "maths"
+  ],
+  "author": "idk-vk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idk-vk/truerandom.js/issues"
+  },
+  "homepage": "https://github.com/idk-vk/truerandom.js#readme"
+}
