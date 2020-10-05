@@ -50,3 +50,26 @@ exports.generate = function (type,length,size) {
     });
   };
 
+
+// range addition 
+exports.digits = function(digits){
+	if(digits  > 5){
+	 let number = 1;
+	}
+	else{
+	 let number = digits/5;
+
+	}
+  return new Promise((resolve, reject) => {
+  truerandom.generate('uint16',number)
+  .then(response => {
+let newarray = response.join('').split('');
+newarray.length = digits;
+ resolve(newarray.join(''));
+
+  })
+  .catch(error => {
+    // handle error here
+  });});
+};
+
