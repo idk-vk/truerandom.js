@@ -1,6 +1,5 @@
 # TrueRandom.js
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 [![NPM](https://nodei.co/npm/truerandom.png)](https://npmjs.org/package/truerandom)
 
 
