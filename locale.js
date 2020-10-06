@@ -51,7 +51,7 @@ exports.generate = function (type,length,size) {
   };
 
 
-// Function to execut main code
+// Function to execute the main code
 
 
 //   truerandom.generate('uint16',2)
@@ -96,3 +96,4 @@ newarray.length = digits;
 //   .catch(error => {
 //     // handle error here
 //   });
+//this is my part
