@@ -1,11 +1,13 @@
 /*jshint esversion: 8 */
-  var https = require('https');
-// let truerandom = {};
+  const { log } = require('console');
+var https = require('https');
 
+//code for generate
 
 exports.generate = function (type,length,size) {
 
   return new Promise((resolve, reject) => {
+
       https.get('https://qrng.anu.edu.au/API/jsonI.php?length='+length+'&type='+type+'&size='+size, (res) => {
         var { statusCode } = res;
         var contentType = res.headers['content-type'];
@@ -37,7 +39,7 @@ exports.generate = function (type,length,size) {
           try {
             const parsedData = JSON.parse(rawData).data;
             //Sending string or an array
-            resolve(parsedData);
+            resolve(parsedData.join(""));
 
           } catch (e) {
             reject(e.message);
@@ -50,29 +52,19 @@ exports.generate = function (type,length,size) {
     });
   };
 
+//code to generate
 
-// Function to execute the main code
+//=====================================================================
 
+//code to digits(calculate n number of random digits )
 
-//   truerandom.generate('uint16',2)
-//   .then(response => {
-
-// console.log(response);
-
-//   })
-//   .catch(error => {
-//     // handle error here
-//   });
-
-
-
-
-
-// let tr = {};
-exports.digits = function(digits,size){
-	 let number = digits/5;
+exports.digits = function(digits){
+  let number;
+  if (digits>=5) {
+    number = (digits/5)+1;
+  }
   return new Promise((resolve, reject) => {
-  exports.generate('uint16',number,size)
+  exports.generate('uint16',number)
   .then(response => {
 let newarray = response.join('').split('');
 newarray.length = digits;
@@ -80,20 +72,13 @@ newarray.length = digits;
 
   })
   .catch(error => {
-    // handle error here
+    console.log(error);
   });});
 };
 
+// code for digits
+
+//=====================================================================
 
 
-
-// exports.digits(10)
-//   .then(response => {
-
-// console.log(response);
-
-//   })
-//   .catch(error => {
-//     // handle error here
-//   });
-//this is my part
+//code for
