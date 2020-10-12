@@ -1,4 +1,5 @@
 /*jshint esversion: 8 */
+const { log } = require('console');
 var https = require('https');
 
 //code for generate
@@ -62,11 +63,15 @@ exports.digits = function(digits){
   if (digits>=5) {
     number = (digits/5)+1;
   }
+  else{
+    number =digits;
+  }
   return new Promise((resolve, reject) => {
   exports.generate('uint16',number)
   .then(response => {
-let newarray = response.join('').split('');
+let newarray = response.split('');
 newarray.length = digits;
+
  resolve(newarray.join(''));
 
   })
@@ -80,4 +85,28 @@ newarray.length = digits;
 //=====================================================================
 
 
-//code for
+//code for getting random number between two numbers (ranged random)
+exports.range= function(lower,upper){
+  let colt = ((upper +lower)/(lower))+2;
+  let number = colt - (colt%1);
+  console.log(number);
+  return new Promise((resolve, reject) => {
+  exports.digits(number)
+  .then(response => {
+    console.log(response);
+    let multiplier = response*(10**(-number));
+let random_number = lower + (upper-lower)*multiplier;
+console.log(random_number);
+if (((random_number%1)>0.5)) {
+  random_number = (random_number-(random_number%1))+1;
+} else {
+  random_number = (random_number-(random_number%1));
+}
+resolve(random_number);
+
+  })
+  .catch(error => {
+    console.log(error);
+  });});
+};
+// code for range
