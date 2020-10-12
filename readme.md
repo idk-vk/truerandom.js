@@ -203,7 +203,7 @@ This is the number of digits expected
  - Make demo apps
  - Support fallback for offline usage
  - Add more functions
- - make it a goto module for randomness projecs
+ - make it a goto module for randomness projects
 
 Want to show support I can add your personal or company badge in the docs for free.
 
