@@ -86,12 +86,19 @@ newarray.length = digits;
 
 //code for getting random number between two numbers (ranged random)
 exports.range= function(lower,upper){
+
   return new Promise((resolve, reject) => {
   exports.digits(4)
   .then(response => {
     console.log(response);
     let multiplier = response*(10**(-4));
-let random_number = lower + (upper-lower)*multiplier;
+    if (lower>upper) {
+      diff = lower -upper;
+    }
+    else{
+      diff = upper -lower;
+    }
+let random_number = lower + (diff)*multiplier;
 console.log(random_number);
 if (((random_number%1)>0.5)) {
   random_number = (random_number-(random_number%1))+1;
@@ -106,3 +113,5 @@ resolve(random_number);
   });});
 };
 // code for range
+
+// code
