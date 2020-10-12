@@ -1,5 +1,4 @@
 /*jshint esversion: 8 */
-const { log } = require('console');
 var https = require('https');
 
 //code for generate
