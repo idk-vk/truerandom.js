@@ -1,5 +1,6 @@
 /*jshint esversion: 8 */
 var https = require('https');
+var md5 = require('md5');
 
 //code for generate
 
@@ -115,3 +116,34 @@ resolve(random_number);
 // code for range
 
 // code
+
+
+//code for md5 + salt
+
+exports.hashmd5 = function(message,digits){
+  let number;
+  if (digits>=5) {
+    number = (digits/5)+1;
+  }
+  else{
+    number =digits;
+  }
+  return new Promise((resolve, reject) => {
+  exports.generate('uint16',number)
+  .then(response => {
+let newarray = response.split('');
+newarray.length = digits;
+
+ let salt = (newarray.join(''));
+ let SaltedMessage = salt+message;
+ resolve([md5(SaltedMessage),salt]);
+
+  })
+  .catch(error => {
+    console.log(error);
+  });});
+};
+
+
+
+//code to generate
