@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/idk-vk/truerandom.js#readme",
   "dependencies": {
-    "md5": "^2.3.0"
+    "md5": "^2.3.0",
+    "sha256": "^0.2.0"
   },
   "devDependencies": {
     "mocha": "^8.1.3"
