@@ -201,7 +201,7 @@ tr.md5("Hi Bob",20)
 ```
 #### Response
 the response is an array of 2 items
-1.  hashed message
+1. hashed message
 2. Salt used to hash
 
 #### Parameters
@@ -212,7 +212,7 @@ the digits function takes 2 parameter
 ### Message(parameter)
 Message to be hashed. Expected string.
 ### Length of salt(parameter)
-Message to be hashed. Expected string.
+length of the digits of hash to be used.
 **Cannot exceed more than 5124**
 
 
@@ -225,7 +225,7 @@ Example code:
 ```
 tr.sha256("Hi Bob",20)
   .then(response => {
-  //Returns an array of 2 items. First is the md5 hash of the message and the second is the salt used
+  //Returns an array of 2 items. First is the sha256 hash of the message and the second is the salt used
     })
   .catch(error => {
     // handle error here
@@ -245,7 +245,7 @@ the digits function takes 2 parameter
 ### Message(parameter)
 Message to be hashed. Expected string.
 ### Length of salt(parameter)
-Message to be hashed. Expected string.
+length of the digits of hash to be used. expeted number
 **Cannot exceed more than 5124**
 
 
