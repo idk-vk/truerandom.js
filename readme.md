@@ -1,3 +1,4 @@
+
 # TrueRandom.js
 
 [![NPM](https://nodei.co/npm/truerandom.js.png)](https://npmjs.org/package/truerandom.js)
@@ -6,19 +7,18 @@
 
 TrueRandom.js is an utility node js library which provides truly random numbers using quantum randomness.
 
-  - True random numbers generated in a lab by Australian National University dilevered hot and fresh for your projects.
+  - True random numbers generated in a lab by Australian National University delivered hot and fresh for your projects.
   - Numbers generated using measuring quantum fluctuations in a vaccum tube.
   - This is a non chaotic generator unlike other other generators which depends on atmospheric noises or pseudo randomness.
 
 # New Features!
 
   - Generate 'n' numbers of random numbers, directly from the function
-  - zero dependencies
+  - Generate Md5 with truly random salt
+  - Generate SHA256 with truly random salt
   
 Limitations:
   - Required internet connection (Fallback currently in development).
-  - Under heavy development. Not battle tested
-  - Many features missing.
 
 
 ### Installation
@@ -81,7 +81,7 @@ tr.generate('uint16',2)
 the generate function takes 3 parameters
 
 - type : the type of numbers requested
-- number : the number of indivisual numbers requested
+- number : the number of individual numbers requested
 - blocksize :The length of a block. (Only needed for hex16)
 
 #### type (parameter)
@@ -104,7 +104,7 @@ tr.generate('uint8',2)
   });
 ```
 
-Then the original responce recieved by TrueRandom.js is
+Then the original response received by TrueRandom.js is
 ```
 [219,172]
 ```
@@ -113,7 +113,7 @@ TrueRandom.js then further joins the array and returns a string similar to-
 219172
 ```
 
-Hence the number parameter is actually the length of the array requested which is directly proportional to the no. of digits of the random number gnerated.
+Hence the number parameter is actually the length of the array requested which is directly proportional to the no. of digits of the random number generated.
 
 **Broadly speaking the bigger no. you use in the number parameter the bigger random number will be generated**
 
@@ -150,12 +150,12 @@ tr.generate('hex16',1,25)
   });
 ```
 
-whill return
+will return
 ```
 8665c4c7a9db220c483136a701c51a1f797bc5ae69a5de75de // size is 50 which is double the given length
 ```
 
-#  digits (digits) (function) !Under development
+#  digits (digits) (function) 
 Used to generate 'n' digits of random numbers. The result is a ‘promise’.
 So u must handle it properly using ‘.then’ and catch errors.
 
@@ -173,12 +173,48 @@ tr.digits(20)
 ```
 
 #### Parameters
-the digits funcion takes  only one parameter
+the digits function takes  only one parameter
 - Digits:Number of digit of random number to be generated
 
 ### digits(parameter)
 This is the number of digits expected
-**Cnnot excede more than 5124**
+**Cannot exceed more than 5124**
+
+
+
+
+#  md5(message,salt digits) (#function) 
+Used to generate a salted md5. The result is a ‘promise’.
+So u must handle it properly using ‘.then’ and catch errors.
+
+Example code:
+
+```
+tr.md5("Hi Bob",20)
+  .then(response => {
+  //Returns an array of 2 items. First is the md5 hash of the message and the second is the salt used
+    })
+  .catch(error => {
+    // handle error here
+  });
+
+```
+#### Response
+the response is an array of 2 items
+1.  hashed message
+2. Salt used to hash
+
+#### Parameters
+the digits function takes 2 parameter
+- Message : Message to be hashed.
+- Length of salt : Length of the truly random salt generated.
+
+### Message(parameter)
+Message to be hashed. Expected string.
+### Length of salt(parameter)
+Message to be hashed. Expected string.
+**Cannot exceed more than 5124**
+
 
 
 
@@ -195,7 +231,7 @@ This is the number of digits expected
  
 
 
-### Todos
+### To-dos
 
  - Write MORE Tests
  - Make it less buggy
@@ -203,9 +239,7 @@ This is the number of digits expected
  - Make demo apps
  - Support fallback for offline usage
  - Add more functions
- - make it a goto module for randomness projects
 
-Want to show support I can add your personal or company badge in the docs for free.
 
 License
 ----
