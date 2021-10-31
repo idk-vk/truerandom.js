@@ -732,7 +732,7 @@ newarray.length = digits;
 //code to generate
 
 
-//code for md5 + salt
+//code for sha1 + salt
 
 exports.sha1 = function (message, digits) {
   let number;
