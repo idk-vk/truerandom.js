@@ -758,7 +758,7 @@ exports.sha1 = function (message, digits) {
   });
 };
 
-//code for sha1 + salt
+//code for doublehash + salt
 
 exports.doubleHash = function (message, digits) {
   let number;
