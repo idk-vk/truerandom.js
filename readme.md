@@ -247,6 +247,38 @@ Message to be hashed. Expected string.
 length of the digits of hash to be used.
 **Cannot exceed more than 5124**
 
+#  doubleHash(message,salt digits) (#function) 
+Used to generate a salted doubleHash. The result is a ‘promise’.
+So u must handle it properly using ‘.then’ and catch errors.
+
+Example code:
+
+```
+tr.doubleHash("Hi Bob",20)
+  .then(response => {
+  //Returns an array of 2 items. First is the doubleHash hash of the message and the second is the salt used
+    })
+  .catch(error => {
+    // handle error here
+  });
+
+```
+#### Response
+the response is an array of 2 items
+1. hashed message
+2. Salt used to hash
+
+#### Parameters
+the digits function takes 2 parameter
+- Message : Message to be hashed.
+- Length of salt : Length of the truly random salt generated.
+
+### Message(parameter)
+Message to be hashed. Expected string.
+### Length of salt(parameter)
+length of the digits of hash to be used.
+**Cannot exceed more than 5124**
+
 
 #  sha256(message,salt digits) (#function) 
 Used to generate a salted sha256. The result is a ‘promise’.
