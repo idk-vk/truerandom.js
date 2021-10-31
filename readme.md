@@ -16,6 +16,8 @@ TrueRandom.js is an utility node js library which provides truly random numbers 
   - Generate 'n' numbers of random numbers, directly from the function
   - Generate Md5 with truly random salt
   - Generate SHA256 with truly random salt
+  - Generate SHA1 with truly random salt
+  - Generate MD5+SHA1(doubleHash) with truly random salt
   
 Limitations:
   - Required internet connection (Fallback currently in development).
@@ -335,6 +337,7 @@ length of the digits of hash to be used. expeted number
  - Make demo apps
  - Support fallback for offline usage
  - Add more functions
+ 
 
 
 License
